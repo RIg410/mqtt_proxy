@@ -1,9 +1,8 @@
-import com.fasterxml.jackson.databind.ObjectMapper;
-import model.Dim;
-import model.Device;
-import model.Switch;
-import org.fusesource.mqtt.client.*;
+package org.sage.proxy;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.fusesource.mqtt.client.*;
+import org.sage.proxy.model.*;
 import java.io.IOException;
 
 import static org.fusesource.hawtbuf.UTF8Buffer.utf8;
@@ -38,6 +37,7 @@ public class Mqtt {
             try {
                 Message msg = connection.receive();
                 String payload = new String(msg.getPayload());
+                System.out.println("message: " + payload);
                 switch (msg.getTopic()) {
                     case "switch":
                         handleSwitch(mapper.readValue(payload, Switch.class));

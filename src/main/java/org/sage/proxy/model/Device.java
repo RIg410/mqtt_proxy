@@ -1,8 +1,18 @@
-package model;
+package org.sage.proxy.model;
 
-public class Switch {
+public class Device {
     private boolean isOn;
     private String name;
+    private int dim;
+
+    public Device() {
+    }
+
+    public Device(boolean isOn, String name, int dim) {
+        this.isOn = isOn;
+        this.name = name;
+        this.dim = dim;
+    }
 
     public boolean isOn() {
         return isOn;
@@ -20,11 +30,20 @@ public class Switch {
         this.name = name;
     }
 
+    public int getDim() {
+        return dim;
+    }
+
+    public void setDim(int dim) {
+        this.dim = dim;
+    }
+
     @Override
     public String toString() {
-        return "Switch{" +
+        return "Device{" +
                 "isOn=" + isOn +
                 ", name='" + name + '\'' +
+                ", dim=" + dim +
                 '}';
     }
 }

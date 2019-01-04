@@ -1,4 +1,4 @@
-package model;
+package org.sage.proxy.model;
 
 public class Dim {
     private int dim;

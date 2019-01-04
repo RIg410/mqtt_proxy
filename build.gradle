@@ -11,6 +11,16 @@ repositories {
     mavenCentral()
 }
 
+jar {
+    manifest {
+        attributes "Main-Class": "org.sage.proxy.Main"
+    }
+
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
+
 dependencies {
     compile "com.fasterxml.jackson.core:jackson-core:2.8.7"
     compile "org.fusesource.mqtt-client:mqtt-client:1.12"

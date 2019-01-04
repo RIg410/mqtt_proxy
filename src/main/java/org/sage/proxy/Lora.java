@@ -1,3 +1,5 @@
+package org.sage.proxy;
+
 import org.apache.http.StatusLine;
 import org.apache.http.client.fluent.Request;
 
@@ -29,7 +31,7 @@ public class Lora {
     }
 
     public void deviceOff(String name, int dim) throws IOException {
-        perform(format("%s/odin/api/device/%s/ON/%d", baseUrl, name, dim));
+        perform(format("%s/odin/api/device/%s/OFF/%d", baseUrl, name, dim));
     }
 
     private void perform(String url) throws IOException {

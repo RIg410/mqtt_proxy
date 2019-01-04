@@ -1,3 +1,5 @@
+package org.sage.proxy;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
@@ -6,15 +8,17 @@ public class Env {
     private final Map<String, String> vals;
 
     public Env() throws FileNotFoundException {
-        Scanner scan = new Scanner(new File(".env"));
+        this(".env");
+    }
+
+    public Env(String path) throws FileNotFoundException {
+        Scanner scan = new Scanner(new File(path));
         Map<String, String> val = new HashMap<>();
         while (scan.hasNextLine()) {
             String[] line = scan.nextLine()
                     .replace(" ", "")
                     .split("=");
             val.put(line[0], line[1]);
-
-            //Here you can manipulate the string the way you want
         }
 
         vals = Collections.unmodifiableMap(val);
