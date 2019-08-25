@@ -1,15 +1,9 @@
 package org.sage.proxy.model;
 
-public class Dim {
-    private int dim;
+public class DeviceInfo {
     private String name;
 
-    public int getDim() {
-        return dim;
-    }
-
-    public void setDim(int dim) {
-        this.dim = dim;
+    public DeviceInfo() {
     }
 
     public String getName() {
@@ -22,9 +16,8 @@ public class Dim {
 
     @Override
     public String toString() {
-        return "Dim{" +
-                "dim=" + dim +
-                ", name='" + name + '\'' +
+        return "DeviceInfo{" +
+                "name='" + name + '\'' +
                 '}';
     }
 }
