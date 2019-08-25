@@ -4,11 +4,14 @@ public class Switch {
     private boolean isOn;
     private String name;
 
+    public Switch() {
+    }
+
     public boolean isOn() {
         return isOn;
     }
 
-    public void setOn(boolean on) {
+    public void setIsOn(boolean on) {
         isOn = on;
     }
 

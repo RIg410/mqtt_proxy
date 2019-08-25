@@ -41,11 +41,11 @@ public class HomeControllerApi {
     }
 
     public void switchOn(String name) throws IOException {
-        get(format("%s/odin/api/v1/switch/%s/ON", baseUrl, name));
+        get(format("%s/odin/api/v1/switch/%s/On", baseUrl, name));
     }
 
     public void switchOff(String name) throws IOException {
-        get(format("%s/odin/api/v1/switch/%s/OFF", baseUrl, name));
+        get(format("%s/odin/api/v1/switch/%s/Off", baseUrl, name));
     }
 
     private Optional<InputStream> get(String url) throws IOException {
